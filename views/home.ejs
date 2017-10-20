@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <% include partials/head.ejs %>
+  </head>
+  <body>
+      <% include partials/header.ejs %>
+    <div id='hero-image'>
+        <h1 id="hero-title"><%- title %></h1>
+    </div>
+    <div id="posters-wrapper" class="content-padding clearfix">
+        <% movies.forEach((movie) => { %>
+            <div class="poster">
+                <a href="/episode/<%- movie.episode_number %>">
+                <img src="/images/<%- movie.poster %>" class="img-responsive">
+                <div class="poster-info-overlay">
+                    <h3><%- movie.title %></h3>
+                    <h4><a href="#">View More <i class="fa fa_arrow_right"></i></a></h4>
+                </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+    <% include partials/scripts.ejs %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "star_wars_movie_app",
+  "version": "1.0.0",
+  "description": "first practice app",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rich krussel",
+  "license": "ISC"
+}
