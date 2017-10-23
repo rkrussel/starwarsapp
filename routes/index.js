@@ -10,6 +10,7 @@ exports.home = (req, res) => {
 exports.singleMovie = (req,res) => {
     const movies = moviesJson.movies;
     const episode_number = req.params.episode_number;
+    
     if(episode_number >= 1 && episode_number <= 6) {
         const movie = movies[episode_number -1];
         const title = movie.title;
@@ -19,19 +20,22 @@ exports.singleMovie = (req,res) => {
             movie:movie,
         });
     } else {
-        res.send('Episode doess not exist.');``
+        res.render('not_found', {
+            movies: movies,
+            title:'Not Found',
+        });
     }
     
 };
 
-exports.test = (req, res) => {
+exports.notFound = (req, res) => {
     const movies = moviesJson.movies;
-    res.render("home",{
+    res.render("not_found",{
         movies:movies,
-        title:'test title',
+        title:'Not Found 404',
     });
 };
 
-exports.notFound = (req, res) => {
-    res.send("404 Not Found this page.");
+exports.test = (req, res) => {
+    res.render("not_found");
 };

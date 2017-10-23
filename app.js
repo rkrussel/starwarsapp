@@ -10,9 +10,7 @@ const routes = require('./routes');
 app.get('/', routes.home);
 app.get('/episode/:episode_number?',routes.singleMovie);
 //app.get('*', routes.notFound);
-app.get('/test',routes.test);
+app.get('/*',routes.notFound);
 
 
-app.listen(3000, () => {
-    console.log('running');
-})
+app.listen(process.env.PORT || 3000);
